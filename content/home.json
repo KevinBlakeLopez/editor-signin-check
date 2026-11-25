@@ -1,0 +1,53 @@
+{
+  "title": "Sample Outsourcing Facility",
+  "seo": {
+    "title": "Sample Outsourcing Facility (test site)",
+    "description": "A fictional outsourcing facility, used to try out a website editor. Nothing on this site is real."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "heading": "Sterile preparations for hospitals and clinics",
+      "text": "A fictional company. Every word on this page is test content.",
+      "image": {
+        "src": "/media/hero.svg",
+        "alt": "Teal and navy shapes"
+      },
+      "link": {
+        "text": "Read our news",
+        "href": "#news"
+      }
+    },
+    {
+      "type": "richText",
+      "html": "<p>We prepare ready-to-use medicines for hospitals, surgery centers and clinics. Each batch is made to order.</p><p>This paragraph is here to try <strong>bold</strong>, <em>italic</em>, links and lists in the editor.</p>"
+    },
+    {
+      "type": "cardGrid",
+      "heading": "What we make",
+      "cards": [
+        {
+          "heading": "Syringes",
+          "text": "Ready-to-administer syringes in common strengths."
+        },
+        {
+          "heading": "IV bags",
+          "text": "Premixed bags for common infusions."
+        },
+        {
+          "heading": "Eye drops",
+          "text": "Preservative-free drops in single-use vials."
+        }
+      ]
+    },
+    {
+      "type": "callToAction",
+      "heading": "Need something we don't list?",
+      "text": "Tell us what you need and we'll reply within one business day.",
+      "link": {
+        "text": "E-mail us",
+        "href": "mailto:orders@example.com"
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+:root {
+  color-scheme: light;
+  --ink: #14213d;
+  --muted: #5c6b80;
+  --accent: #0f766e;
+  --rule: #d8dee8;
+  --paper: #ffffff;
+  --tint: #f3f6f9;
+  --notice: #fff4d6;
+  --notice-ink: #5a4300;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.notice {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background: var(--notice);
+  color: var(--notice-ink);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+main {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+section {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+main > :first-child {
+  border-top: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.page-title {
+  padding-top: 2.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 48rem) {
+  .hero {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
+
+.lede {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.4rem;
+  background: var(--accent);
+  color: var(--paper);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cards ul,
+.news ul {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards ul {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.cards li {
+  padding: 1.2rem;
+  background: var(--tint);
+  border-radius: 0.5rem;
+}
+
+.cards p,
+.news p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cta {
+  text-align: center;
+}
+
+.news li {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.date {
+  font-size: 0.9rem;
+}
+
+.status {
+  padding: 2rem 0;
+  color: var(--muted);
+}

@@ -1,0 +1,143 @@
+# Pages CMS settings for the editor sign-in check: a throwaway test with
+# fictional content. Docs: https://pagescms.org/docs/configuration/
+
+media:
+  input: media
+  output: /media
+  categories: [image]
+
+settings:
+  commit:
+    # Record the editor's name and e-mail address on each commit. The default
+    # ("app") commits under the Pages CMS app's name instead.
+    identity: user
+
+content:
+  # One page built from sections, shaped like the SDK's blocks (hero,
+  # richText, cardGrid, callToAction), simplified for the test.
+  - name: home
+    label: Home page
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - name: title
+        label: Page title
+        type: string
+        required: true
+      - name: seo
+        label: Search results
+        type: object
+        fields:
+          - name: title
+            label: Title in search results
+            type: string
+          - name: description
+            label: Description in search results
+            type: text
+            options:
+              maxlength: 160
+      - name: blocks
+        label: Sections
+        type: block
+        list: true
+        blockKey: type
+        blocks:
+          - name: hero
+            label: Hero
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+                required: true
+              - name: text
+                label: Text
+                type: text
+              - name: image
+                label: Image
+                type: object
+                fields:
+                  - name: src
+                    label: Image file
+                    type: image
+                  - name: alt
+                    label: Description for screen readers
+                    type: string
+              - name: link
+                label: Button
+                type: object
+                fields:
+                  - name: text
+                    label: Button text
+                    type: string
+                  - name: href
+                    label: Link address
+                    type: string
+          - name: richText
+            label: Text
+            fields:
+              - name: html
+                label: Text
+                type: rich-text
+                options:
+                  format: html
+                  # No pictures inside text: the test site only places
+                  # images in the hero.
+                  media: false
+          - name: cardGrid
+            label: Cards
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+              - name: cards
+                label: Cards
+                type: object
+                list: true
+                fields:
+                  - name: heading
+                    label: Card heading
+                    type: string
+                    required: true
+                  - name: text
+                    label: Card text
+                    type: text
+          - name: callToAction
+            label: Call to action
+            fields:
+              - name: heading
+                label: Heading
+                type: string
+                required: true
+              - name: text
+                label: Text
+                type: text
+              - name: link
+                label: Button
+                type: object
+                fields:
+                  - name: text
+                    label: Button text
+                    type: string
+                  - name: href
+                    label: Link address
+                    type: string
+
+  # A list of news items in one file: adding an item is the most common edit.
+  - name: news
+    label: News
+    type: file
+    path: content/news.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Headline
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+      - name: summary
+        label: Summary
+        type: text
